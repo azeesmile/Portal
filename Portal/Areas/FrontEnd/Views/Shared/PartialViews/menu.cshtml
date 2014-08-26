@@ -1,0 +1,74 @@
+﻿<nav class="main-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--//nav-toggle-->
+        </div>
+        <!--//navbar-header-->
+        <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active nav-item">@Html.ActionLink("Home", "index", "Home")</li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"
+                        href="@Url.Action("index", "About")">About Us <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("LGU Leadership", "LGULeadership", new { Area = "FrontEnd", Controller="About" }, null)</li>
+                        <li>@Html.ActionLink("Vision And Mission", "VisionAndMission", "About")</li>
+                        <li>@Html.ActionLink("Honors And Awards", "HonorsAndAwards", "About")</li>
+                        <li>@Html.ActionLink("LGU Compuses", "LGUCompuses", "About")</li>
+                        <li>@Html.ActionLink("LGU At Glance", "LGUAtGlance", "About")</li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"
+                        href="@Url.Action("index", "Academic")"> Academic Programs
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("UnderGraduate Programs", "UnderGraduate", "Academic")</li>
+                        <li>@Html.ActionLink("PostGraduate Programs", "PostGraduate", "Academic")</li>
+                        <li>@Html.ActionLink("Academic Calendar", "AcademicCalendar", "Academic")</li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"
+                        href="@Url.Action("index", "Academic")"> Addmissions
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Why LGU", "WhyLGU", "Addmissions")</li>
+                        <li>@Html.ActionLink("Eligibility Criteria", "EligibilityCriteria", "Addmissions")</li>
+                        <li>@Html.ActionLink("Fee Structure", "FeeStructure", "Addmissions")</li>
+                        <li>@Html.ActionLink("Scholarships", "Scholarships", "Addmissions")</li>
+                        <li>@Html.ActionLink("Downloads", "Downloads", "Addmissions")</li>
+                    </ul>
+                </li>
+                <li class="nav-item">@Html.ActionLink("News And Events", "index", "NewsAndEvents")</li>
+                <!--//dropdown-->
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false"
+                        href="@Url.Action("index", "Services")">Services <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Library", "Library", "Services")</li>
+                        <li>@Html.ActionLink("Transport", "Transport", "Services")</li>
+                        <li>@Html.ActionLink("Cafeteria", "Cafeteria", "Services")</li>
+                        <li>@Html.ActionLink("Societies And Clubs", "SocietiesAndClubs", "Services")</li>
+                        <li>@Html.ActionLink("Internet And Computer Facilities", "InternetAndComputerFacilites", "Services")</li>
+                    </ul>
+                </li>
+                <!--//dropdown-->
+                <li class="nav-item">@Html.ActionLink("Contact","index","Contact")</li>
+            </ul>
+            <!--//nav-->
+        </div>
+        <!--//navabr-collapse-->
+    </div>
+    <!--//container-->
+</nav><!--//main-nav-->
+        

@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35C2BCCB-8C8C-4BD5-878A-D482D6A0847E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Portal</RootNamespace>
+    <AssemblyName>Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\AboutController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\AcademicController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\AddmissionsController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\ContactController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\FacultyController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\HomeController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\NewsAndEventsController.cs" />
+    <Compile Include="Areas\FrontEnd\Controllers\ServicesController.cs" />
+    <Compile Include="Areas\FrontEnd\FrontEndAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Controllers\TimetablesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Answer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CMSPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CMS_Category.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Course.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ELMAH_Error.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Exam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Feedback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Gallery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\GalleryType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lecture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\NoticeBoard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\PortalDatabase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Reg_Courses.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Section.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Semester.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Teacher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Timetable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\portal.mdf" />
+    <Content Include="App_Data\portal_log.ldf">
+      <DependentUpon>portal.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\Admin\css\animate.min.css" />
+    <Content Include="Content\Admin\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Admin\css\bootstrap-switch.css" />
+    <Content Include="Content\Admin\css\bootstrap.min.css" />
+    <Content Include="Content\Admin\css\font-awesome.min.css" />
+    <Content Include="Content\Admin\css\fullcalendar.css" />
+    <Content Include="Content\Admin\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\Admin\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Admin\css\jquery-ui.css" />
+    <Content Include="Content\Admin\css\jquery.cleditor.css" />
+    <Content Include="Content\Admin\css\jquery.gritter.css" />
+    <Content Include="Content\Admin\css\prettyPhoto.css" />
+    <Content Include="Content\Admin\css\rateit.css" />
+    <Content Include="Content\Admin\css\style.css" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\Admin\img\cleditor\buttons.gif" />
+    <Content Include="Content\Admin\img\cleditor\toolbar.gif" />
+    <Content Include="Content\Admin\img\delete.gif" />
+    <Content Include="Content\Admin\img\footer-back.png" />
+    <Content Include="Content\Admin\img\gritter\gritter-light.html" />
+    <Content Include="Content\Admin\img\gritter\gritter.png" />
+    <Content Include="Content\Admin\img\gritter\ie-spacer.gif" />
+    <Content Include="Content\Admin\img\icons\android.png" />
+    <Content Include="Content\Admin\img\icons\chrome.png" />
+    <Content Include="Content\Admin\img\icons\firefox.png" />
+    <Content Include="Content\Admin\img\icons\ie.png" />
+    <Content Include="Content\Admin\img\icons\ios.png" />
+    <Content Include="Content\Admin\img\icons\linux.png" />
+    <Content Include="Content\Admin\img\icons\mac.png" />
+    <Content Include="Content\Admin\img\icons\metro.png" />
+    <Content Include="Content\Admin\img\icons\opera.png" />
+    <Content Include="Content\Admin\img\icons\safari.png" />
+    <Content Include="Content\Admin\img\icons\windows.png" />
+    <Content Include="Content\Admin\img\main-back.png" />
+    <Content Include="Content\Admin\img\portfolio\1.jpg" />
+    <Content Include="Content\Admin\img\portfolio\2.jpg" />
+    <Content Include="Content\Admin\img\portfolio\3.jpg" />
+    <Content Include="Content\Admin\img\portfolio\4.jpg" />
+    <Content Include="Content\Admin\img\portfolio\5.jpg" />
+    <Content Include="Content\Admin\img\portfolio\6.jpg" />
+    <Content Include="Content\Admin\img\portfolio\7.jpg" />
+    <Content Include="Content\Admin\img\portfolio\8.jpg" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\Admin\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\Admin\img\sep.png" />
+    <Content Include="Content\Admin\img\star.gif" />
+    <Content Include="Content\Admin\img\user.jpg" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FrontEnd\images\750x300-about.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award1.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award2.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award3.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award4.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award5.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award6.jpg" />
+    <Content Include="Content\FrontEnd\images\awards\award7.jpg" />
+    <Content Include="Content\FrontEnd\images\courses\course-1.jpg" />
+    <Content Include="Content\FrontEnd\images\courses\course-thumb-1.jpg" />
+    <Content Include="Content\FrontEnd\images\courses\course-thumb-2.jpg" />
+    <Content Include="Content\FrontEnd\images\courses\course-thumb-3.jpg" />
+    <Content Include="Content\FrontEnd\images\courses\course-thumb-4.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-1.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-14.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-15.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-16.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-17.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-18.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-19.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-20.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-21.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-22.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-23.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-24.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-1.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-10.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-11.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-12.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-13.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-14.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-15.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-16.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-17.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-18.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-19.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-2.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-20.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-21.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-22.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-23.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-24.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-3.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-4.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-5.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-6.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-7.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-8.jpg" />
+    <Content Include="Content\FrontEnd\images\gallery\gallery-thumb-9.jpg" />
+    <Content Include="Content\FrontEnd\images\logo.png" />
+    <Content Include="Content\FrontEnd\images\misc\bootstrap-glyphicons-screenshot.png" />
+    <Content Include="Content\FrontEnd\images\misc\fontawsome-screenshot.png" />
+    <Content Include="Content\FrontEnd\images\news\news-1.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-1.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-2.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-3.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-4.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-5.jpg" />
+    <Content Include="Content\FrontEnd\images\news\news-thumb-6.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-1.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-2.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-3.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-4.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-5.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-6.jpg" />
+    <Content Include="Content\FrontEnd\images\slides\slide-7.jpg" />
+    <Content Include="Content\FrontEnd\images\team\team-1.jpg" />
+    <Content Include="Content\FrontEnd\images\team\team-2.jpg" />
+    <Content Include="Content\FrontEnd\images\team\team-3.jpg" />
+    <Content Include="Content\FrontEnd\images\team\team-4.jpg" />
+    <Content Include="Content\FrontEnd\images\testimonials\profile-1.png" />
+    <Content Include="Content\FrontEnd\images\testimonials\profile-2.png" />
+    <Content Include="Content\FrontEnd\images\testimonials\profile-3.png" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\FrontEnd\plugins\flexslider\flexslider.css" />
+    <Content Include="Content\FrontEnd\plugins\flexslider\images\bg_direction_nav.png" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\css\prettyPhoto.css" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\FrontEnd\plugins\pretty-photo\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\FrontEnd\styles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Admin\js\bootstrap-datetimepicker-min.js" />
+    <Content Include="Scripts\Admin\js\bootstrap-min.js" />
+    <Content Include="Scripts\Admin\js\bootstrap-switch-min.js" />
+    <Content Include="Scripts\Admin\js\custom.js" />
+    <Content Include="Scripts\Admin\js\fullcalendar-min.js" />
+    <Content Include="Scripts\Admin\js\html5shiv.js" />
+    <Content Include="Scripts\Admin\js\jquery-cleditor-min.js" />
+    <Content Include="Scripts\Admin\js\jquery-flot-pie.js" />
+    <Content Include="Scripts\Admin\js\jquery-flot-resize.js" />
+    <Content Include="Scripts\Admin\js\jquery-flot.js" />
+    <Content Include="Scripts\Admin\js\jquery-prettyPhoto.js" />
+    <Content Include="Scripts\Admin\js\jquery-rateit-min.js" />
+    <Content Include="Scripts\Admin\js\jquery-ui-1.10.2.custom-min.js" />
+    <Content Include="Scripts\Admin\js\jquery.flot.stack.js" />
+    <Content Include="Scripts\Admin\js\jquery.gritter.min.js" />
+    <Content Include="Scripts\Admin\js\jquery.js" />
+    <Content Include="Scripts\Admin\js\peity.js" />
+    <Content Include="Scripts\Admin\js\respond-min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\FrontEnd\plugins\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Areas\FrontEnd\Views\web.config" />
+    <Content Include="Areas\FrontEnd\Views\About\HonorsAndAwards.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\About\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\About\LGUAtGlance.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\About\LGUCompuses.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\About\LGULeadership.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\About\VisionAndMission.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Academic\AcademicCalendar.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Academic\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Academic\PostGraduate.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Academic\UnderGraduate.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\Downloads.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\EligibilityCriteria.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\FeeStructure.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\Scholarships.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Addmissions\WhyLGU.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Home\FAQ.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Home\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\NewsAndEvents\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\Cafeteria.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\Index.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\InternetAndComputerFacilites.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\Library.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\SocietiesAndClubs.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Services\Transport.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Shared\PartialViews\menu.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Shared\PartialViews\SocialNetworks.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Shared\temp.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\FrontEnd\Views\_ViewStart.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap-min.js" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap.js" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\FrontEnd\admin\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\FrontEnd\admin\demo\dashboard-demo.js" />
+    <Content Include="Scripts\FrontEnd\admin\demo\flot-demo.js" />
+    <Content Include="Scripts\FrontEnd\admin\demo\morris-demo.js" />
+    <Content Include="Scripts\FrontEnd\admin\jquery-1.10.2.js" />
+    <Content Include="Scripts\FrontEnd\admin\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\FrontEnd\admin\jquery-1.9.1.js" />
+    <Content Include="Scripts\FrontEnd\admin\jquery-ui.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\flot\excanvas.min.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\flot\jquery.flot.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\morris\morris.js" />
+    <Content Include="Scripts\FrontEnd\admin\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Scripts\FrontEnd\admin\Site.js" />
+    <Content Include="Scripts\FrontEnd\back-to-top.js" />
+    <Content Include="Scripts\FrontEnd\bootstrap-hover-dropdown-min.js" />
+    <Content Include="Scripts\FrontEnd\jquery-1.10.2-min.js" />
+    <Content Include="Scripts\FrontEnd\jquery-migrate-1.2.1-min.js" />
+    <Content Include="Scripts\FrontEnd\main.js" />
+    <Content Include="Scripts\FrontEnd\map.js" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\FrontEnd\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\FrontEnd\plugins\flexslider\jquery.flexslider-min.js" />
+    <Content Include="Scripts\FrontEnd\plugins\gmaps\gmaps.js" />
+    <Content Include="Scripts\FrontEnd\plugins\jflickrfeed\jflickrfeed.js" />
+    <Content Include="Scripts\FrontEnd\plugins\jquery-placeholder\jquery.placeholder.js" />
+    <Content Include="Scripts\FrontEnd\plugins\pretty-photo\js\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\AdminHome.cshtml" />
+    <Content Include="Views\Home\_MainHeaderPartial.cshtml" />
+    <Content Include="Views\Home\_LoginHeaderPartial.cshtml" />
+    <Content Include="Views\Home\_MenuAdminPartial.cshtml" />
+    <Content Include="Views\Account\_LoginHeaderPartial.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\Teachers\Delete.cshtml" />
+    <Content Include="Views\Teachers\Details.cshtml" />
+    <Content Include="Views\Teachers\Edit.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Timetables\Create.cshtml" />
+    <Content Include="Views\Timetables\Delete.cshtml" />
+    <Content Include="Views\Timetables\Details.cshtml" />
+    <Content Include="Views\Timetables\Edit.cshtml" />
+    <Content Include="Views\Timetables\Index.cshtml" />
+    <Content Include="Views\Shared\PartialViews\_MainHeaderPartial.cshtml" />
+    <Content Include="Views\Shared\PartialViews\_MenuAdminPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\FrontEnd\Models\" />
+    <Folder Include="Areas\FrontEnd\Views\Default\" />
+    <Folder Include="Areas\FrontEnd\Views\Faculty\" />
+    <Folder Include="Content\FrontEnd\images\bg\" />
+    <Folder Include="Content\FrontEnd\images\media\" />
+    <Folder Include="Content\FrontEnd\images\social\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\autosize\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\blockUI\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpalette\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpalette\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpicker\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpicker\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-colorpicker\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\build\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\docs\_static\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\js\locales\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\tests\assets\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\tests\suites\keyboard_navigation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datepicker\tests\suites\mouse_navigation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-daterangepicker\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\build\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\js\locales\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\sample\bootstrap\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\sample\bootstrap\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\sample\bootstrap\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\sample\jquery\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\screenshot\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\tests\assets\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\tests\suites\keyboard_navigation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-datetimepicker\tests\suites\mouse_navigation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-fileupload\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-hover-dropdown\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-modal\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-modal\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-modal\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\build\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\css\highlight.js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\documentation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\fonts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\src\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-paginator\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-social-buttons\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-switch\examples\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-switch\static\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-switch\static\less\deps\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-switch\static\stylesheets\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-timepicker\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-timepicker\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-timepicker\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-timepicker\spec\js\fixtures\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap-timepicker\spec\js\helpers\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap\fonts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\bootstrap\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\adapters\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\lang\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\about\dialogs\hidpi\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\clipboard\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\dialog\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\fakeobjects\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\image\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\image\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\link\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\link\images\hidpi\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\magicline\images\hidpi\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\pastefromword\filter\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\scayt\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\specialchar\dialogs\lang\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\tabletools\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\table\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\plugins\wsc\dialogs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\assets\inlineall\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\assets\outputxhtml\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\assets\uilanguages\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\dialog\assets\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\enterkey\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\magicline\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\toolbar\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\samples\plugins\wysiwygarea\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ckeditor\skins\moono\images\hidpi\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\content\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\example1\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\example2\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\example3\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\example4\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\example5\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\colorbox\i18n\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\css3-animation\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\advanced_init\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\ajax\sources\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\api\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\basic_init\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\data_sources\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\syntax\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\syntax\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\syntax\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\syntax\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\themes\smoothness\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\examples_support\themes\ui-lightness\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\plug-ins\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\examples\server_side\scripts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\AutoFill\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColReorder\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\ColVis\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedColumns\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedColumns\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedColumns\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedColumns\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedColumns\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\FixedHeader\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\KeyTable\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\data\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\docs\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\docs\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\docs\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\docs\media\license\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\Scroller\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\TableTools\media\as3\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\TableTools\media\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\TableTools\media\images\psd\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\TableTools\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\extras\TableTools\media\swf\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\css\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\src\api\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\src\core\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\src\ext\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\src\model\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\performance\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\templates\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests\1_dom\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\1_dom\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\2_js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\3_ajax\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\4_server-side\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\5_ajax_objects\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\media\unit_testing\tests_onhold\6_delayed_rendering\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\DataTables\scripts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\datepicker\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\datepicker\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\datepicker\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dropzone\downloads\css\stylus\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dropzone\downloads\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dropzone\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dropzone\src\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dropzone\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\dist\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\doc\contextmenu\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\doc\jq.context\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\doc\skin-custom\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\jquery\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\src\skin-vista\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\src\skin\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\dynatree\tests\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\ajax\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\annotating\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\axes-interacting\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\axes-multiple\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\axes-time-zones\tz\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\axes-time\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\basic-options\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\basic-usage\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\canvas\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\categories\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\image\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\interacting\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\navigate\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\percentiles\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\realtime\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\resize\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\selection\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\series-errorbars\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\series-pie\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\series-toggle\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\series-types\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\shared\jquery-ui\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\stacking\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\symbols\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\threshold\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\tracking\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\visitors\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\flot\examples\zooming\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\font-awesome\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\font-awesome\fonts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\font-awesome\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\font-awesome\scss\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\fullcalendar\demos\cupertino\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\fullcalendar\fullcalendar\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\fullcalendar\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gmaps\examples\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gmaps\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gmaps\test\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gmaps\test\spec\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gmaps\test\template\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gritter\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gritter\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\gritter\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\demo\css\ie\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\demo\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\flat\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\futurico\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\line\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\minimal\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\polaris\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\iCheck\skins\square\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\Jcrop\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\Jcrop\demos\demo_files\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\Jcrop\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jqGrid\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jqGrid\js\i18n\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jqGrid\plugins\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jqGrid\src\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jqGrid\src\i18n\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQRangeSlider\css\icons-classic\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQRangeSlider\demo\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQRangeSlider\demo\lib\jquery-ui\css\smoothness\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQRangeSlider\demo\lib\jquery-ui\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQRangeSlider\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-address\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-cookie\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-easy-pie-chart\examples\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-easy-pie-chart\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\cors\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\js\cors\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\js\vendor\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\gae-go\app\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\gae-go\static\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\gae-python\static\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\node\public\files\thumbnail\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\node\tmp\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\server\php\files\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-File-Upload\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\prop-base\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\props\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\text-base\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\tmp\prop-base\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\tmp\props\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-inputlimiter\.svn\tmp\text-base\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Knob\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-maskmoney\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-migrate\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-mockjax\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-mockjax\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Smart-Wizard\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Smart-Wizard\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Smart-Wizard\more_examples\services\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Smart-Wizard\styles\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jQuery-Tags-Input\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-ui-touch-punch\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-ui\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\captcha\fonts\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\captcha\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\login\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\marketo\images\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\milk\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\multipart\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\tabs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\tinymce\themes\simple\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\tinymce\themes\simple\langs\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\demo\tinymce\themes\simple\skins\default\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\dist\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\localization\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\test\firebug\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\test\qunit\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery-validation\test\selects\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\demo\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\dist\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\spec\lib\jasmine-species\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\spec\lib\jasmine\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\src\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.maskedinput\templates\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.pulsate\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\jquery.sparkline\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ladda-bootstrap\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ladda-bootstrap\dist\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\ladda-bootstrap\js\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\less\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\moment\lang\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\moment\min\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\moment\tasks\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\moment\test\lang\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\moment\test\moment\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\nestable\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\perfect-scrollbar\examples\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\perfect-scrollbar\min\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\perfect-scrollbar\src\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\rainyday\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\select2\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\summernote\build\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\summernote\test\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\typeaheadjs\lib\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\wysihtml5\bootstrap-wysihtml5-0.0.2\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\x-editable\css\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\x-editable\img\" />
+    <Folder Include="Scripts\FrontEnd\admin\plugins\x-editable\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21561</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3557/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

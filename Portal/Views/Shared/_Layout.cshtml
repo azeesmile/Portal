@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Title here -->
+    <title>Dashboard - Olson Admin</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="~/Content/Admin/css/jquery.gritter.css" rel="stylesheet">
+    <!-- Animate css -->
+    <link href="~/Content/Admin/css/animate.min.css" rel="stylesheet">
+    <!-- Bootstrap toggable -->
+    <link href="~/Content/Admin/css/bootstrap-switch.css" rel="stylesheet">
+    <!-- jQuery UI -->
+    <link href="~/Content/Admin/css/jquery-ui.css" rel="stylesheet">
+    <!-- prettyPhoto -->
+    <link href="~/Content/Admin/css/prettyPhoto.css" rel="stylesheet">
+    <!-- Font awesome CSS -->
+    <link href="~/Content/Admin/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/Admin/css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+
+
+    <!-- Logo & Navigation starts -->
+
+    <div class="header">
+        <div class="container">
+            <div class="row">
+
+                <!-- Logo and Navigation Partial view -->
+                @RenderSection("LogoAndHeader", required: true)
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo & Navigation ends -->
+    <!-- Page content -->
+
+    <div class="page-content blocky">
+        <div class="container">
+            <!-- Side menu Partial view -->
+            @RenderSection("SideMenu", required: false)
+            <!-- Page title -->
+            @RenderBody()
+            <!-- Page title -->
+            <!-- Admin hero. Peity bar plugin used -->
+        </div>
+    </div>
+
+
+
+    <!-- Footer starts -->
+    <footer>
+        <div class="container">
+            <div class="copy text-center">
+                Copyright 2014 © - <a href="#">Lahore Garrison University</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer ends -->
+    <!-- Scroll to top -->
+    <span class="totop" style="display: block;"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
+    <!-- Javascript files -->
+    <!-- jQuery -->
+    <script src="~/Scripts/Admin/js/jquery.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/Scripts/Admin/js/bootstrap-min.js"></script>
+    <!-- jQuery UI -->
+    <script src="~/Scripts/Admin/js/jquery-ui-min.js"></script>
+    <!-- jQuery Peity -->
+    <script src="~/Scripts/Admin/js/peity.js"></script>
+    <!-- Calendar -->
+    <script src="~/Scripts/Admin/js/fullcalendar-min.js"></script>
+    <!-- jQuery Star rating -->
+    <script src="~/Scripts/Admin/js/jquery-rateit-min.js"></script>
+    <!-- prettyPhoto -->
+    <script src="~/Scripts/Admin/js/jquery-prettyPhoto.js"></script>
+    <!-- jQuery flot -->
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="~/Scripts/Admin/js/excanvas-min.js"></script><![endif]-->
+    <script src="~/Scripts/Admin/js/jquery-flot.js"></script>
+    <script src="~/Scripts/Admin/js/jquery-flot-pie.js"></script>
+    <script src="~/Scripts/Admin/js/jquery-flot-stack.js"></script>
+    <script src="~/Scripts/Admin/js/jquery-flot-resize.js"></script>
+    <!-- Gritter plugin -->
+    <script src="~/Scripts/Admin/js/jquery-gritter-min.js"></script>
+    <!-- CLEditor -->
+    <script src="~/Scripts/Admin/js/jquery-cleditor-min.js"></script>
+    <!-- Date and Time picker -->
+    <script src="~/Scripts/Admin/js/bootstrap-datetimepicker-min.js"></script>
+    <!-- jQuery Toggable -->
+    <script src="~/Scripts/Admin/js/bootstrap-switch-min.js"></script>
+    <!-- Respond JS for IE8 -->
+    <script src="~/Scripts/Admin/js/respond-min.js"></script>
+    <!-- HTML5 Support for IE -->
+    <script src="~/Scripts/Admin/js/html5shiv.js"></script>
+    <!-- Custom JS -->
+    <script src="~/Scripts/Admin/js/custom.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,174 @@
+﻿@model Portal.Models.Teacher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="mainy">
+    <!-- Page title -->
+    <div class="page-title">
+        <h2><i class="fa fa-desktop color"></i> Dashboard <small>@Html.ActionLink("Create New", "Create")</small></h2>
+        <hr>
+    </div>
+    <!-- Page title -->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="awidget full-width">
+                <div class="awidget-head">
+                    <h3>All Students</h3>
+                </div>
+                <div class="awidget-body">
+
+                    <div>
+                        <h4>Teacher</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AddedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AddedDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ModifiedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ModifiedDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Status)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.FName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.FName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CNIC)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CNIC)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Qulification)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Qulification)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Designation)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Designation)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Description)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Address)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DateOfBirth)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DateOfBirth)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MobileNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MobileNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LandlineNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LandlineNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Gender)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Age)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Age)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UserName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Passwrd)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Passwrd)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.TeacherId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

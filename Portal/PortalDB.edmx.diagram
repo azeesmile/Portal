@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52fa2350d47c48c1891b4786867cce19" Name="Diagram1">
+        <EntityTypeShape EntityType="PortalModel.Answer" Width="1.5" PointX="9.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.CMS_Category" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.CMSPage" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Course" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.ELMAH_Error" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Exam" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Feedback" Width="1.5" PointX="7.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Gallery" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.GalleryType" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Lecture" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.NoticeBoard" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Reg_Courses" Width="1.5" PointX="10.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Section" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Semester" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Student" Width="1.5" PointX="12.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Teacher" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalModel.Timetable" Width="1.5" PointX="5.25" PointY="25.125" IsExpanded="true" />
+        <AssociationConnector Association="PortalModel.FK_Answer_Feedback" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_CMSPage_CMS_Category1" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_courses_semester" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Exam_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Lectures_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Reg_Courses_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Exam_Section" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_FeedBack_teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Gallery_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Lectures_section" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Lectures_teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Reg_Courses_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_Reg_Courses_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_classtimetable_section" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_section_semester" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.FK_student_section" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.StudentTeacher" ManuallyRouted="false" />
+        <AssociationConnector Association="PortalModel.TeacherSection" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

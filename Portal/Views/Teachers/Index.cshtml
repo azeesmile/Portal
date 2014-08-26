@@ -1,0 +1,150 @@
+﻿@model IEnumerable<Portal.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="mainy">
+    <!-- Page title -->
+    <div class="page-title">
+        <h2><i class="fa fa-desktop color"></i> Dashboard <small>@Html.ActionLink("Create New", "Create")</small></h2>
+        <hr>
+    </div>
+    <!-- Page title -->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="awidget full-width">
+                <div class="awidget-head">
+                    <h3>All Students</h3>
+                </div>
+                <div class="awidget-body">
+
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                    <table class="table table-hover table-bordered">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AddedDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ModifiedDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CNIC)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Qulification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Designation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateOfBirth)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MobileNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LandlineNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Age)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Passwrd)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AddedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNIC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Qulification)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Designation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MobileNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LandlineNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Age)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Passwrd)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TeacherId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.TeacherId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.TeacherId })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

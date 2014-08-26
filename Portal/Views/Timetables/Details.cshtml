@@ -1,0 +1,150 @@
+﻿@model Portal.Models.Timetable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="mainy">
+    <!-- Page title -->
+    <div class="page-title">
+        <h2><i class="fa fa-desktop color"></i> Dashboard <small>@Html.ActionLink("Create New", "Create")</small></h2>
+        <hr>
+    </div>
+    <!-- Page title -->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="awidget full-width">
+                <div class="awidget-head">
+                    <h3>All Students</h3>
+                </div>
+                <div class="awidget-body">
+
+                    <div>
+                        <h4>Timetable</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Section.SectionName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Section.SectionName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Day)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Day)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period1)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period1)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period2)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period2)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period3)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period3)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period4)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period4)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period5)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period5)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period6)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period6)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period7)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period7)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period8)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period8)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Period9)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Period9)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AddedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AddedDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ModifiedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ModifiedDate)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Status)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.TimetableId }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

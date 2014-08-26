@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Feedback_Id" Type="Int32" Nullable="false" />
+    <Property Name="AnsDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Feedback" Relationship="Self.FK_Answer_Feedback" FromRole="Answer" ToRole="Feedback" />
+  </EntityType>
+  <EntityType Name="CMS_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="CMSPages" Relationship="Self.FK_CMSPage_CMS_Category1" FromRole="CMS_Category" ToRole="CMSPage" />
+  </EntityType>
+  <EntityType Name="CMSPage">
+    <Key>
+      <PropertyRef Name="CMSPageId" />
+    </Key>
+    <Property Name="CMSPageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CMSCategory_Id" Type="Int32" Nullable="false" />
+    <Property Name="CMSPageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CMSPageHeading" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="CMS_Category" Relationship="Self.FK_CMSPage_CMS_Category1" FromRole="CMSPage" ToRole="CMS_Category" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Semester_Id" Type="Int32" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CourseCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsElective" Type="Boolean" Nullable="false" />
+    <Property Name="CreditHours" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Semester" Relationship="Self.FK_courses_semester" FromRole="Course" ToRole="Semester" />
+    <NavigationProperty Name="Exams" Relationship="Self.FK_Exam_Course" FromRole="Course" ToRole="Exam" />
+    <NavigationProperty Name="Lectures" Relationship="Self.FK_Lectures_courses" FromRole="Course" ToRole="Lecture" />
+    <NavigationProperty Name="Reg_Courses" Relationship="Self.FK_Reg_Courses_Course" FromRole="Course" ToRole="Reg_Courses" />
+  </EntityType>
+  <EntityType Name="ELMAH_Error">
+    <Key>
+      <PropertyRef Name="ErrorId" />
+    </Key>
+    <Property Name="ErrorId" Type="Guid" Nullable="false" />
+    <Property Name="Application" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Host" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="TimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AllXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exam">
+    <Key>
+      <PropertyRef Name="ExamId" />
+    </Key>
+    <Property Name="ExamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="ExamType" Type="Int16" Nullable="false" />
+    <Property Name="ExamDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Section_Id" Type="Int32" />
+    <Property Name="Course_Id" Type="Int32" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Exam_Course" FromRole="Exam" ToRole="Course" />
+    <NavigationProperty Name="Section" Relationship="Self.FK_Exam_Section" FromRole="Exam" ToRole="Section" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Teacher_Id" Type="Int32" Nullable="false" />
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Answers" Relationship="Self.FK_Answer_Feedback" FromRole="Feedback" ToRole="Answer" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_FeedBack_teacher" FromRole="Feedback" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="GalleryId" />
+    </Key>
+    <Property Name="GalleryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FriendlyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type_Id" Type="Int32" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="GalleryType" Relationship="Self.FK_Gallery_Type" FromRole="Gallery" ToRole="GalleryType" />
+  </EntityType>
+  <EntityType Name="GalleryType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Galleries" Relationship="Self.FK_Gallery_Type" FromRole="GalleryType" ToRole="Gallery" />
+  </EntityType>
+  <EntityType Name="Lecture">
+    <Key>
+      <PropertyRef Name="LectureId" />
+    </Key>
+    <Property Name="LectureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Teacher_Id" Type="Int32" Nullable="false" />
+    <Property Name="Section_Id" Type="Int32" Nullable="false" />
+    <Property Name="Course_Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FileUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int16" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Lectures_courses" FromRole="Lecture" ToRole="Course" />
+    <NavigationProperty Name="Section" Relationship="Self.FK_Lectures_section" FromRole="Lecture" ToRole="Section" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_Lectures_teacher" FromRole="Lecture" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="NoticeBoard">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsHeading" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reg_Courses">
+    <Key>
+      <PropertyRef Name="RegId" />
+    </Key>
+    <Property Name="RegId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Id" Type="Int32" Nullable="false" />
+    <Property Name="Teacher_Id" Type="Int32" Nullable="false" />
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="GPA" Type="Double" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Course" Relationship="Self.FK_Reg_Courses_Course" FromRole="Reg_Courses" ToRole="Course" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_Reg_Courses_Student" FromRole="Reg_Courses" ToRole="Student" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_Reg_Courses_Teacher" FromRole="Reg_Courses" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="Semester_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Exams" Relationship="Self.FK_Exam_Section" FromRole="Section" ToRole="Exam" />
+    <NavigationProperty Name="Lectures" Relationship="Self.FK_Lectures_section" FromRole="Section" ToRole="Lecture" />
+    <NavigationProperty Name="Timetables" Relationship="Self.FK_classtimetable_section" FromRole="Section" ToRole="Timetable" />
+    <NavigationProperty Name="Semester" Relationship="Self.FK_section_semester" FromRole="Section" ToRole="Semester" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_student_section" FromRole="Section" ToRole="Student" />
+    <NavigationProperty Name="Teachers" Relationship="Self.TeacherSection" FromRole="Section" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="Semester">
+    <Key>
+      <PropertyRef Name="SemesterId" />
+    </Key>
+    <Property Name="SemesterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SemesterName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK_courses_semester" FromRole="Semester" ToRole="Course" />
+    <NavigationProperty Name="Sections" Relationship="Self.FK_section_semester" FromRole="Semester" ToRole="Section" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegistrationNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Section_Id" Type="Int32" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LandlineNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Reg_Courses" Relationship="Self.FK_Reg_Courses_Student" FromRole="Student" ToRole="Reg_Courses" />
+    <NavigationProperty Name="Section" Relationship="Self.FK_student_section" FromRole="Student" ToRole="Section" />
+    <NavigationProperty Name="Teachers" Relationship="Self.StudentTeacher" FromRole="Student" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+    </Key>
+    <Property Name="TeacherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Qulification" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MobileNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LandlineNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passwrd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Feedbacks" Relationship="Self.FK_FeedBack_teacher" FromRole="Teacher" ToRole="Feedback" />
+    <NavigationProperty Name="Lectures" Relationship="Self.FK_Lectures_teacher" FromRole="Teacher" ToRole="Lecture" />
+    <NavigationProperty Name="Reg_Courses" Relationship="Self.FK_Reg_Courses_Teacher" FromRole="Teacher" ToRole="Reg_Courses" />
+    <NavigationProperty Name="Students" Relationship="Self.StudentTeacher" FromRole="Teacher" ToRole="Student" />
+    <NavigationProperty Name="Sections" Relationship="Self.TeacherSection" FromRole="Teacher" ToRole="Section" />
+  </EntityType>
+  <EntityType Name="Timetable">
+    <Key>
+      <PropertyRef Name="TimetableId" />
+    </Key>
+    <Property Name="TimetableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Section_Id" Type="Int32" Nullable="false" />
+    <Property Name="Day" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Period1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period7" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period8" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Period9" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Section" Relationship="Self.FK_classtimetable_section" FromRole="Timetable" ToRole="Section" />
+  </EntityType>
+  <Association Name="FK_Answer_Feedback">
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="1" />
+    <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Feedback">
+        <PropertyRef Name="ReportId" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="Feedback_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMSPage_CMS_Category1">
+    <End Role="CMS_Category" Type="Self.CMS_Category" Multiplicity="1" />
+    <End Role="CMSPage" Type="Self.CMSPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMS_Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="CMSPage">
+        <PropertyRef Name="CMSCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_courses_semester">
+    <End Role="Semester" Type="Self.Semester" Multiplicity="1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semester">
+        <PropertyRef Name="SemesterId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Semester_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Exam">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lectures_courses">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="Lecture" Type="Self.Lecture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Lecture">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reg_Courses_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="Reg_Courses" Type="Self.Reg_Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Reg_Courses">
+        <PropertyRef Name="Course_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exam_Section">
+    <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+    <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Exam">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeedBack_teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="Teacher_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gallery_Type">
+    <End Role="GalleryType" Type="Self.GalleryType" Multiplicity="1" />
+    <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GalleryType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Gallery">
+        <PropertyRef Name="Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lectures_section">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="Lecture" Type="Self.Lecture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Lecture">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lectures_teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Lecture" Type="Self.Lecture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="Lecture">
+        <PropertyRef Name="Teacher_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reg_Courses_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="Reg_Courses" Type="Self.Reg_Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Reg_Courses">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reg_Courses_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="Reg_Courses" Type="Self.Reg_Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="Reg_Courses">
+        <PropertyRef Name="Teacher_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_classtimetable_section">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Timetable">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_section_semester">
+    <End Role="Semester" Type="Self.Semester" Multiplicity="1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semester">
+        <PropertyRef Name="SemesterId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="Semester_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_student_section">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Section_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentTeacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+  </Association>
+  <Association Name="TeacherSection">
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="PortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="Self.Answer" />
+    <EntitySet Name="CMS_Category" EntityType="Self.CMS_Category" />
+    <EntitySet Name="CMSPages" EntityType="Self.CMSPage" />
+    <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="ELMAH_Error" EntityType="Self.ELMAH_Error" />
+    <EntitySet Name="Exams" EntityType="Self.Exam" />
+    <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+    <EntitySet Name="Galleries" EntityType="Self.Gallery" />
+    <EntitySet Name="GalleryTypes" EntityType="Self.GalleryType" />
+    <EntitySet Name="Lectures" EntityType="Self.Lecture" />
+    <EntitySet Name="NoticeBoards" EntityType="Self.NoticeBoard" />
+    <EntitySet Name="Reg_Courses" EntityType="Self.Reg_Courses" />
+    <EntitySet Name="Sections" EntityType="Self.Section" />
+    <EntitySet Name="Semesters" EntityType="Self.Semester" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="Timetables" EntityType="Self.Timetable" />
+    <AssociationSet Name="FK_Answer_Feedback" Association="Self.FK_Answer_Feedback">
+      <End Role="Feedback" EntitySet="Feedbacks" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMSPage_CMS_Category1" Association="Self.FK_CMSPage_CMS_Category1">
+      <End Role="CMS_Category" EntitySet="CMS_Category" />
+      <End Role="CMSPage" EntitySet="CMSPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_courses_semester" Association="Self.FK_courses_semester">
+      <End Role="Semester" EntitySet="Semesters" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_Course" Association="Self.FK_Exam_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Exam" EntitySet="Exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lectures_courses" Association="Self.FK_Lectures_courses">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Lecture" EntitySet="Lectures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reg_Courses_Course" Association="Self.FK_Reg_Courses_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Reg_Courses" EntitySet="Reg_Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exam_Section" Association="Self.FK_Exam_Section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Exam" EntitySet="Exams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeedBack_teacher" Association="Self.FK_FeedBack_teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gallery_Type" Association="Self.FK_Gallery_Type">
+      <End Role="GalleryType" EntitySet="GalleryTypes" />
+      <End Role="Gallery" EntitySet="Galleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lectures_section" Association="Self.FK_Lectures_section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Lecture" EntitySet="Lectures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lectures_teacher" Association="Self.FK_Lectures_teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Lecture" EntitySet="Lectures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reg_Courses_Student" Association="Self.FK_Reg_Courses_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Reg_Courses" EntitySet="Reg_Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reg_Courses_Teacher" Association="Self.FK_Reg_Courses_Teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Reg_Courses" EntitySet="Reg_Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_classtimetable_section" Association="Self.FK_classtimetable_section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Timetable" EntitySet="Timetables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_section_semester" Association="Self.FK_section_semester">
+      <End Role="Semester" EntitySet="Semesters" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_student_section" Association="Self.FK_student_section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="StudentTeacher" Association="Self.StudentTeacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="TeacherSection" Association="Self.TeacherSection">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Teacher" EntitySet="Teachers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
